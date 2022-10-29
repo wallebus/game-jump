@@ -2,12 +2,14 @@ lockfileVersion: 5.4
 
 specifiers:
   '@vitejs/plugin-vue': ^3.1.0
+  amfe-flexible: ^2.2.1
   typescript: ^4.6.4
   vite: ^3.1.0
   vue: ^3.2.37
   vue-tsc: ^0.40.4
 
 dependencies:
+  amfe-flexible: 2.2.1
   vue: 3.2.41
 
 devDependencies:
@@ -190,6 +192,10 @@ packages:
 
   /@vue/shared/3.2.41:
     resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==}
+
+  /amfe-flexible/2.2.1:
+    resolution: {integrity: sha512-L2VfvDzoETBjhRptg5u/IUuzHSuxm22JpSRb404p/TBGeRfwWmmNEbB+TFPIP/sS/+pbM18bCFH9QnMojLuPNw==}
+    dev: false
 
   /csstype/2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
