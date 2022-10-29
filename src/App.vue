@@ -15,8 +15,8 @@ onMounted(() => {
 })
 
 const ctx = canvas.getContext("2d");
-const WIDTH = (canvas.width = 600);
-const HEIGHT = (canvas.height = 600);
+const WIDTH = canvas.width = 600
+const HEIGHT = canvas.height = 600
 
 // Control the sprit option
 const Frames = [
@@ -55,7 +55,7 @@ const Sprit = {
 const dogAnimate = new Image();
 dogAnimate.src = dog_img;
 
-let selected = ref("run") as Ref<animateName>
+let selected = ref("idle") as Ref<animateName>
 function animate() {
   ctx?.clearRect(0, 0, WIDTH, HEIGHT);
   let position = Math.floor(Sprit.gameFrame / Sprit.staggerFrame) % Sprit.currentFames(selected.value);
@@ -80,6 +80,17 @@ function animate() {
 
 animate();
 
+window.addEventListener("resize", () => {
+  let unit: "80vh" | "80vw"
+
+  if (window.innerWidth > window.innerHeight) {
+    unit = "80vh"
+  } else {
+    unit = "80vw"
+  }
+  canvas.style.width = canvas.style.height = unit
+})
+
 </script>
 <template >
   <select name="animation" id="animate-select" v-model="selected">
@@ -90,15 +101,21 @@ animate();
 <style>
 #sprit {
   display: block;
-  width: 80vw;
-  height: 80vw;
+
   border: 2px solid rgb(229, 229, 229);
+}
+
+@media (width > height) {
+  #sprit {
+    width: 80vh;
+    height: 80vh;
+  }
 }
 
 #animate-select {
   width: 70px;
   height: 25px;
-  margin-bottom: 25px;
+  margin: 20px 0;
   font-size: medium;
 }
 
